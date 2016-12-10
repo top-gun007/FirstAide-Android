@@ -8,10 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.peacecorps.pcsa.circle_of_trust.CircleIntro;
 import com.peacecorps.pcsa.circle_of_trust.CircleOfTrustFragment;
+import com.peacecorps.pcsa.circle_of_trust.CircleIntroActivity;
 import com.peacecorps.pcsa.get_help_now.ContactPostStaff;
 import com.peacecorps.pcsa.policies_glossary.PoliciesFragment;
 import com.peacecorps.pcsa.safety_tools.SafetyToolsFragment;
@@ -91,7 +90,7 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(!introFinished)
-                    startActivityForResult(new Intent(getActivity(), CircleIntro.class),2);
+                    startActivityForResult(new Intent(getActivity(), CircleIntroActivity.class),2);
                 else
                 {
                     //Swapping CircleOfTrustFragment into the container

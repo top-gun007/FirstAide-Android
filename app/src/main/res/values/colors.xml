@@ -10,6 +10,7 @@
     <color name="intro3_background">#5C6BC0</color>
     <color name="intro4_background">#4CAF50</color>
     <color name="intro_text_color">#ffffff</color>
+    <color name="selected_dot">#ffffff</color>
     <color name="fragment_safety_resource_text_color">#fff</color>
     <color name="activity_trustee_background">#05D197</color>
     <color name="activity_trustee_text_color">#fffaf3f1</color>
@@ -24,6 +25,18 @@
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#05D197</color>
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#B58B61</color>
+    <color name="dot_dark_screen2">#007A85</color>
+    <color name="dot_dark_screen3">#4658A0</color>
+    <color name="dot_dark_screen4">#32863A</color>
+    <!-- array inactive -->
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
 
 
 

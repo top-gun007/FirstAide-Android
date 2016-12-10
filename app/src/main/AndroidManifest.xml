@@ -44,14 +44,6 @@
                 android:value="com.peacecorps.pcsa.MainActivity" />
         </activity>
         <activity
-            android:name=".circle_of_trust.CircleIntro"
-            android:label="@string/title_activity_circle_intro"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.peacecorps.pcsa.MainActivity" />
-        </activity>
-        <activity
             android:name=".safety_resources.SafetyResources"
             android:label="@string/title_activity_saftey_resources"
             android:parentActivityName=".MainActivity">
@@ -84,6 +76,13 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.peacecorps.pcsa.SplashScreenActivity" />
+        </activity>
+        <activity android:name=".circle_of_trust.CircleIntroActivity"
+            android:label="@string/title_activity_circle_intro"
+            android:parentActivityName=".MainActivity">
+                        <meta-data
+                            android:name="android.support.PARENT_ACTIVITY"
+                            android:value="com.peacecorps.pcsa.MainActivity" />
         </activity>
     </application>
 
