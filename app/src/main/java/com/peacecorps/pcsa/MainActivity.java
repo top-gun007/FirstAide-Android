@@ -21,6 +21,7 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 import com.peacecorps.pcsa.circle_of_trust.CircleOfTrustFragment;
+import com.peacecorps.pcsa.get_help_now.ContactOtherStaff;
 import com.peacecorps.pcsa.get_help_now.ContactPostStaff;
 import com.peacecorps.pcsa.policies_glossary.FurtherResourcesFragment;
 import com.peacecorps.pcsa.policies_glossary.GlossaryFragment;
@@ -255,18 +256,29 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = activity.getSupportFragmentManager();
         // Insert the fragment by replacing any existing fragment
         FRAGMENT_TAG = TAG;
+        int animEnter = R.anim.push_down_in;
+        int animExit = R.anim.push_down_out;
+        int animPopEnter = R.anim.fade_in;
+        int animPopExit = R.anim.fade_out;
+
         if(addToBackStack){
+            if (TAG.equals(ContactOtherStaff.TAG)) {
+                animEnter = R.anim.fade_in;
+                animExit = R.anim.fade_out;
+                animPopEnter = R.anim.fade_in_back;
+                animPopExit = R.anim.fade_out_back;
+            }
             fragmentManager.beginTransaction()
-                    .setCustomAnimations(R.anim.push_down_in,R.anim.push_down_out,R.anim.fade_in,R.anim.fade_out)
+                    .setCustomAnimations(animEnter, animExit, animPopEnter, animPopExit)
                     .replace(R.id.fragment_container
                             , fragment,TAG)
                     .addToBackStack(TAG)
                     .commit();
-        }
-        else
-        {
+        } else {
+            animEnter = R.anim.fade_in;
+            animExit = R.anim.fade_out;
             fragmentManager.beginTransaction()
-                    .setCustomAnimations(R.anim.fade_in,R.anim.fade_out,R.anim.fade_in,R.anim.fade_out)
+                    .setCustomAnimations(animEnter, animExit, animPopEnter, animPopExit)
                     .replace(R.id.fragment_container
                             , fragment,TAG)
                     .commit();
