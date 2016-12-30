@@ -128,5 +128,7 @@
     <dimen name="fragment_main_marginTop_30">30dp</dimen>
     <dimen name="textsize_links">18sp</dimen>
     <dimen name="splash_logo_marginTop">106dp</dimen>
+    <dimen name="circle_of_trust_comrade_marginTop">26dp</dimen>
+    <dimen name="circle_of_trust_title_paddingLeft">-65dp</dimen>
 
 </resources>

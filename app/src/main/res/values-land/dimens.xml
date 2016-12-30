@@ -3,4 +3,6 @@
 
     <dimen name="splash_logo_marginTop">75dp</dimen>
     <dimen name="progressbar_margin_top">15dp</dimen>
+    <dimen name="circle_of_trust_comrade_marginTop">2dp</dimen>
+    <dimen name="circle_of_trust_title_paddingLeft">-65dp</dimen>
 </resources>
