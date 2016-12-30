@@ -127,5 +127,6 @@
     <dimen name="font_size_meaning">16sp</dimen>
     <dimen name="fragment_main_marginTop_30">30dp</dimen>
     <dimen name="textsize_links">18sp</dimen>
+    <dimen name="splash_logo_marginTop">106dp</dimen>
 
 </resources>
