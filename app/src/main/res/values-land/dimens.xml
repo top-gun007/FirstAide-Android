@@ -8,4 +8,5 @@
     <dimen name="button_width_poststaff">600dp</dimen>
     <dimen name="tactics_marginLeft">80dp</dimen>
     <dimen name="reporting_types_paddingLeft">80dp</dimen>
+    <dimen name="radar_viewpager_height">180dp</dimen>
 </resources>
