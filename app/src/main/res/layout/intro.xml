@@ -24,7 +24,7 @@
         android:layout_height="@dimen/intro_layout_height"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_weight="@integer/intro4_linear_layout_weight">
+        android:layout_weight="@integer/intro_linear_layout_weight">
 
         <ImageView
             android:layout_width="@dimen/layout_width"
