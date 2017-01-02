@@ -20,7 +20,7 @@ Download [Android Studio](http://developer.android.com/sdk/index.html) and the r
 ###Installation:
 Go to your terminal and execute this command
 
-    $ git clone https://github.com/systers/PCSA-Android
+    $ git clone https://github.com/systers/FirstAide-Android
 
 Or download the ZIP file from above
 
@@ -34,10 +34,10 @@ Or download the ZIP file from above
 6. Wait for a few seconds and the app should start on your device(android phone or emulator)
 
 ## Documentation
-Latest documentation for FirstAide can be found [here](https://github.com/systers/PCSA-Android/tree/develop/docs)
+Latest documentation for FirstAide can be found [here](https://github.com/systers/FirstAide-Android/tree/develop/docs)
 
 ## Contributing
-If you want to contribute to FirstAide-Android, subscribe to our [systers-dev](http://systers.org/mailman/listinfo/systers-dev) mailing list and shoot an introductory email. Pick an open issue from the [issue list](https://github.com/systers/PCSA-Android/issues) taged "free", claim it in the comments, fix the issue and send us a pull request. 
+If you want to contribute to FirstAide-Android, subscribe to our [systers-dev](http://systers.org/mailman/listinfo/systers-dev) mailing list and shoot an introductory email. Pick an open issue from the [issue list](https://github.com/systers/FirstAide-Android/issues) taged "free", claim it in the comments, fix the issue and send us a pull request. 
 If you find an issue yourself you can report it, a community member will get back to you and approve the issue. Then you can fix it and submit a PR. Please go through our issue list first and make sure the issues you are reporting  do not replicate the issues already reported. If you have issues on multiple pages, report them separately. Do not combine them into a single issue.
 
 ### Avoid doing the following mistakes
@@ -47,8 +47,8 @@ If you find an issue yourself you can report it, a community member will get bac
 4. Suggest completely new developments in the issue list. (Please use the mailing list for this kind of suggestions. Use issue list to suggest bugs/features in the already implemented sections.)
 
 ### Best Practices
-1. [Issue Reporting Best Practices](https://github.com/systers/PCSA-Android/wiki/Issue-Reporting-Best-Practices)
-2. [PR Best Practices] (https://github.com/systers/PCSA-Android/wiki/PR-Best-Practices)
+1. [Issue Reporting Best Practices](https://github.com/systers/FirstAide-Android/wiki/Issue-Reporting-Best-Practices)
+2. [PR Best Practices] (https://github.com/systers/FirstAide-Android/wiki/PR-Best-Practices)
 
 ## Troubleshooting/Issues
 
