@@ -63,6 +63,7 @@
                 android:textColor="@color/activity_trustee_edittext_color"
                 android:cursorVisible="false"
                 android:inputType="number"
+                android:imeOptions="actionNext"
                 android:hint="@string/comrade1"
                 android:ems="@integer/ems"
                 android:paddingTop="@dimen/padding_top"/>
@@ -93,6 +94,7 @@
                 android:layout_marginLeft="@dimen/trustee_margin"
                 android:layout_marginTop="@dimen/trustee_margin"
                 android:inputType="number"
+                android:imeOptions="actionNext"
                 android:textCursorDrawable="@null"
                 android:background="@drawable/edit_text_bg"
                 android:layout_gravity="center"
@@ -123,6 +125,7 @@
                 android:layout_below="@id/comrade2EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
                 android:layout_marginRight="@dimen/trustee_margin"
                 android:layout_marginLeft="@dimen/trustee_margin"
                 android:layout_marginTop="@dimen/trustee_margin"
@@ -161,6 +164,7 @@
                 android:layout_marginLeft="@dimen/trustee_margin"
                 android:layout_marginTop="@dimen/trustee_margin"
                 android:inputType="number"
+                android:imeOptions="actionNext"
                 android:textCursorDrawable="@null"
                 android:background="@drawable/edit_text_bg"
                 android:layout_gravity="center"
@@ -195,6 +199,7 @@
                 android:layout_marginLeft="@dimen/trustee_margin"
                 android:layout_marginTop="@dimen/trustee_margin"
                 android:inputType="number"
+                android:imeOptions="actionNext"
                 android:textCursorDrawable="@null"
                 android:background="@drawable/edit_text_bg"
                 android:layout_gravity="center"
@@ -234,6 +239,7 @@
                 android:inputType="number"
                 android:textColor="@color/activity_trustee_edittext_color"
                 android:hint="@string/comrade6"
+                android:imeOptions="actionDone"
                 android:ems="@integer/ems"
                 android:paddingTop="@dimen/padding_top"/>
 
