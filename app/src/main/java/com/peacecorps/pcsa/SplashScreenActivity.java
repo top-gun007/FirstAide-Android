@@ -16,6 +16,8 @@ public class SplashScreenActivity extends Activity {
 
     private static int SPLASH_TIME_OUT = 2500;
     private ProgressBar progressBar;
+    private Handler handler;
+    private Runnable runnable;
 
     /**
      * Instance of Handler class is used to load the main screen after 2500 ms
@@ -27,7 +29,7 @@ public class SplashScreenActivity extends Activity {
         progressBar = (ProgressBar)findViewById(R.id.splash_screen_progress);
         progressBar.getIndeterminateDrawable().setColorFilter(getResources().getColor(R.color.background_textview),android.graphics.PorterDuff.Mode.MULTIPLY);
         progressBar.setVisibility(View.VISIBLE);
-        new Handler().postDelayed(new Runnable() {
+        runnable = new Runnable() {
 
             /*
              * Showing splash screen with a timer. This will be useful when you
@@ -41,6 +43,16 @@ public class SplashScreenActivity extends Activity {
                 startActivity(i);
                 finish();
             }
-        }, SPLASH_TIME_OUT);
+        };
+        handler = new Handler();
+        handler.postDelayed(runnable, SPLASH_TIME_OUT);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (handler != null) {
+            handler.removeCallbacks(runnable);
+        }
     }
 }
