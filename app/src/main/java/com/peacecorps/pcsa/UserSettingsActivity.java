@@ -75,13 +75,33 @@ public class UserSettingsActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences,final String key) {
+
+            EditTextPreference editTextPreference = (EditTextPreference) getPreferenceScreen().findPreference(
+                    "NAME");
+            editTextPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(
+                        android.preference.Preference preference, Object newValue) {
+
+                    if (newValue.toString().trim().equals("")) {
+
+                        Toast.makeText(getActivity(), R.string.valid_name,
+                                Toast.LENGTH_SHORT).show();
+
+                        return false;
+                    }else if(!newValue.toString().matches("^[a-zA-Z ]*$")){
+                        Toast.makeText(getActivity(),R.string.prompt_please_valid, Toast.LENGTH_SHORT).show();
+                        return false;
+                    }
+                    return true;
+                }
+            });
+
             if("".equals(sharedPreferences.getString(key,"").trim())){
-                Toast.makeText(getActivity(),R.string.valid_name, Toast.LENGTH_SHORT).show();
                 return;
             }
             else if(!sharedPreferences.getString(key,"").matches("^[a-zA-Z ]*$")){
-                Toast.makeText(getActivity(),R.string.prompt_please_valid, Toast.LENGTH_SHORT).show();
                 return;
             }
             else
