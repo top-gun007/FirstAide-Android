@@ -37,7 +37,6 @@ public class WasFragment extends Fragment {
         knowButton.setText(getString(R.string.sexual_assault));
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.harassment);
         wasContent.setText(Html.fromHtml(getString(R.string.was_content)));
-        wasContent.setGravity(Gravity.CENTER);
         knowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
