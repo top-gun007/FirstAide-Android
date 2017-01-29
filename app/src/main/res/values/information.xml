@@ -203,11 +203,11 @@
     <string name="tactics_1">
         &lt;b>Characteristics of Sexual Assault&lt;/b>&lt;br/>&lt;br/>
         &lt;b>•&lt;/b>\t\t\t&lt;b>Sexual predators often plan sexual assaults&lt;/b>&lt;br/>
-            ·\t\t\tSexual assault is not an accident.  Sexual predators know what they want to do, even if they have not already identified a specific target.  Most of them have a plan in mind for how they will select and control someone, or they will seek out an area where a potential victim might be isolated and unable to get help. When we say planned to some extent it may not mean days or weeks in advance but also planned in the particular moment.&lt;br/>&lt;br/>
+            \t\t\tSexual assault is not an accident.  Sexual predators know what they want to do, even if they have not already identified a specific target.  Most of them have a plan in mind for how they will select and control someone, or they will seek out an area where a potential victim might be isolated and unable to get help. When we say planned to some extent it may not mean days or weeks in advance but also planned in the particular moment.&lt;br/>&lt;br/>
         &lt;b>•&lt;/b>\t\t\t&lt;b>Sexual predators often watch for vulnerabilities and opportunities&lt;/b>&lt;br/>
-            ·\t\t\tSexual predators look for cues to indicate they can dominate and control a potential victim. They look for signs indicating that someone would be unlikely or unable to resist.  For instance, people who are unaware of their surroundings, alone or lost; someone who is intoxicated or in some way incapacitated.&lt;br/>&lt;br/>
+            \t\t\tSexual predators look for cues to indicate they can dominate and control a potential victim. They look for signs indicating that someone would be unlikely or unable to resist.  For instance, people who are unaware of their surroundings, alone or lost; someone who is intoxicated or in some way incapacitated.&lt;br/>&lt;br/>
         &lt;b>•&lt;/b>\t\t\t&lt;b>Sexual predators often test the boundaries of potential victims&lt;/b>&lt;br/>
-            ·\t\t\tTesting boundaries may involve inappropriate comments, unwanted touching or invading personal space. It is a way of measuring the amount of resistance a potential victim might offer. A person who offers little or no resistance to these advances might be seen as a suitable target.&lt;br/>&lt;br/>
+            \t\t\tTesting boundaries may involve inappropriate comments, unwanted touching or invading personal space. It is a way of measuring the amount of resistance a potential victim might offer. A person who offers little or no resistance to these advances might be seen as a suitable target.&lt;br/>&lt;br/>
     </string>
 
     <string name="tactics_2">
@@ -250,7 +250,8 @@
     <string name="bystander_non_verbal">
     &lt;b>•&lt;/b>\t\t\tGet in line of vision and catch their eye&lt;br/>
     &lt;b>•&lt;/b>\t\t\tTake a group photo to document what the potential offender looks like&lt;br/>
-    &lt;b>•&lt;/b>\t\t\tAsk/Assess situation with a thumbs up/down&lt;/b>&lt;br/>&lt;b>•&lt;/b>\t\t\tWave to your friend to indicate you are leaving to get them to come with you
+    &lt;b>•&lt;/b>\t\t\tAsk/Assess situation with a thumbs up/down&lt;/b>&lt;br/>
+    &lt;b>•&lt;/b>\t\t\tWave to your friend to indicate you are leaving to get them to come with you&lt;/b>&lt;br/>
     &lt;b>•&lt;/b>\t\t\tText or call the Volunteer&lt;br/>
     &lt;b>•&lt;/b>\t\t\tUse a distraction to get the predator’s attention&lt;br/>
     &lt;b>•&lt;/b>\t\t\tStrike up a conversation with someone nearby to physically get closer&lt;br/>
@@ -285,7 +286,7 @@
         &lt;b>•&lt;/b>\t\t\tIdentify strategies or actions post may take to support you in these efforts&lt;br/>&lt;br/>
         &lt;b>•&lt;/b>\t\t\tIf you want post staff perspective and help, simply ask&lt;br/>&lt;br/>
         &lt;b>•&lt;/b>\t\t\tIf you are feeling overwhelmed with fear or anxiety, have a conversation with the PCMO or a counselor to talk it out&lt;br/>&lt;br/>
-        &lt;b>•&lt;/b>\t\t\tSafety planning is an on-going process.  New concerns may arise that require adjusting it.  Modify your safety plan to accommodate any changes.
+        &lt;b>•&lt;/b>\t\t\tSafety planning is an on-going process.  New concerns may arise that require adjusting it.  Modify your safety plan to accommodate any changes
    </string>
 
     <!-- Safety Plan -->
@@ -437,9 +438,9 @@
         and security support will know your identity. &lt;br/>&lt;br/>
     \t\tThe Peace Corps Director has made it clear that all staff are expected to uphold these commitments, both in actions and words.
         If you are sexually assaulted and you feel that Peace Corps staff members are not living up to the agency’s commitment, you can:&lt;br/>&lt;br/>
-        Contact the agency’s Office of Victim Advocacy, which is independent from staff at post.&lt;br/>
-        Contact the Office of the Inspector General, or OIG, which provides independent oversight of agency programs and operations
-        through regular audits, evaluations and investigations.  &lt;br/>&lt;br/>
+    &lt;b>Contact the agency’s Office of Victim Advocacy, which is independent from staff at post.&lt;br/>
+        &lt;br/>Contact the Office of the Inspector General, or OIG, which provides independent oversight of agency programs and operations
+        through regular audits, evaluations and investigations.&lt;/b> &lt;br/>&lt;br/>
 •\t\t\t	If you feel that a sexual assault was not handled according to the agency’s Commitment to Sexual Assault Victims you can
         confidentially report to the OIG via an online web form located on Peace Corps’ website, or by phone, or email.</string>
 
@@ -511,7 +512,7 @@
         regarding a sexual assault may be subject to disciplinary action.</string>
     <string name="mythbusters_subtitle2">FACT: You will be part of the discussions about your continued service at your site, in country, or in Peace Corps. No decision will be made without your input and your participation.
         Keep in mind, one of the biggest factors to be considered will be your personal safety. Peace Corps will help you evaluate your options.</string>
-    <string name="mythbusters_subtitle3">: Peace Corps goes to great lengths to train staff in the field to understand sexual assault and respond to the needs of Volunteers who become the victims of violent crime. Designated Staff at post,
+    <string name="mythbusters_subtitle3">FACT: Peace Corps goes to great lengths to train staff in the field to understand sexual assault and respond to the needs of Volunteers who become the victims of violent crime. Designated Staff at post,
         which include Safety and Security Managers, Peace Corps Medical Officers, and Sexual Assault Response Liaisons, are specially trained to respond to reports of sexual assault with compassion and professionalism. </string>
     <string name="mythbusters_subtitle4">FACT: Peace Corps honors an Immunity Policy, which is a way for Peace Corps to promote reporting of sexual assault and ensure a compassionate and supportive response by the Agency.
         Victims—and witnesses who didn’t help commit the sexual assault—need not fear any administrative consequences for reporting a sexual assault regardless of the circumstances or whether they were violating a Peace Corps policy when the incident occurred.
@@ -694,7 +695,7 @@ assist you with your legal options. Peace Corps will be with you every step of t
     <string name="burglary_info">
         Unlawful or forcible entry of a residence. This incident type usually, but not always, involves theft. The illegal entry may be forcible,
         such as breaking a window or slashing a screen, or may be without force by entering through an unlocked door or an open window. As long as the person entering has no legal right to be present in the residence, a burglary has occurred. Also includes illegal entry of a hotel room.
-        &lt;b>&lt;br/>&lt;br/>0What is a burglary?&lt;/b> &lt;br/>
+        &lt;b>&lt;br/>&lt;br/>What is a burglary?&lt;/b> &lt;br/>
 A burglary occurs anytime there is unlawful or unauthorized entry or attempted into your house, room or hotel room. Unlawful entry does not have to involve force or someone breaking in; unlawful entry occurs anytime someone who does not have permission enters your house or hotel room. Unlawful entry can occur through a window or door that is not locked or through a window or door that has been left open.
 
     </string>
