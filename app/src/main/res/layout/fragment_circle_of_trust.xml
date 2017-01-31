@@ -23,13 +23,14 @@
                 android:layout_height="@dimen/circle_of_trust_height"
                 android:src="@drawable/ic_edit_button"
                 android:background="@drawable/btn_rounded_rectangle"
-                android:layout_marginRight="@dimen/circle_of_trust_marginRight"/>
+                android:layout_marginRight="@dimen/circle_of_trust_marginRight"
+                android:scaleType="fitXY"/>
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/primary_text_default_material_dark"
-                android:textSize="@dimen/sub_title_font"
+                android:textSize="@dimen/sub_title_font_trustee"
                 android:textStyle="bold"
                 android:text="@string/circle_subtitle"
                 android:paddingLeft="@dimen/circle_of_trust_title_paddingLeft"

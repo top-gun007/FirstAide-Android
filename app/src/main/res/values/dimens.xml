@@ -133,5 +133,9 @@
     <dimen name="tactics_marginLeft">0dp</dimen>
     <dimen name="reporting_types_paddingLeft">0dp</dimen>
     <dimen name="radar_viewpager_height">350dp</dimen>
+    <dimen name="cirle_imageview_width">250dp</dimen>
+    <dimen name="circle_imageview_height">250dp</dimen>
+    <dimen name="safety_plan_marginTop">20dp</dimen>
+    <dimen name="sub_title_font_trustee">28sp</dimen>
 
 </resources>

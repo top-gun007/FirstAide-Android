@@ -37,7 +37,7 @@
         android:background="@color/photo_border"/>
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/third"
@@ -76,7 +76,8 @@
             android:id="@+id/loginButton"
             style="@style/NavigateButton"
             android:text="@string/login"
-            android:layout_marginTop="@dimen/fragment_main_marginTop_35"/>
+            android:layout_marginTop="@dimen/fragment_main_marginTop_35"
+            android:layout_width="match_parent" />
 
     </LinearLayout>
 
