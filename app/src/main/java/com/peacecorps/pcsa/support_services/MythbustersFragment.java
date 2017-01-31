@@ -23,6 +23,7 @@ public class MythbustersFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView =  inflater.inflate(R.layout.fragment_coping,container,false);
+        getActivity().getWindow().setBackgroundDrawable(null);
 
         String[] values = new String[] {
                 getResources().getString(R.string.mythbusters_subtitle1),getResources().getString(R.string.mythbusters_subtitle2),

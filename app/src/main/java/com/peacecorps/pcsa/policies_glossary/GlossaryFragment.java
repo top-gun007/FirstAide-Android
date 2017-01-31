@@ -46,6 +46,7 @@ public class GlossaryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView =  inflater.inflate(R.layout.fragment_glossary,container,false);
+        getActivity().getWindow().setBackgroundDrawable(null);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.policies_glossary);
         //Get the listview
         final ExpandableListView expListView = (ExpandableListView) rootView.findViewById(R.id.list_words);

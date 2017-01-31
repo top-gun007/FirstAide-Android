@@ -34,6 +34,7 @@ public class SafetyToolsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView =  inflater.inflate(R.layout.fragment_safety_tools,container,false);
+        getActivity().getWindow().setBackgroundDrawable(null);
         radarButton = (Button)rootView.findViewById(R.id.radarButton);
         unwantedAttentionButton = (Button)rootView.findViewById(R.id.unwantedAttentionButton);
         tacticsButton = (Button)rootView.findViewById(R.id.tacticsButton);

@@ -50,6 +50,7 @@ public class CircleIntroActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_circle_intro);
+        getWindow().setBackgroundDrawable(null);
         slideViewPager = (ViewPager) findViewById(R.id.view_pager);
         indicatingDotsContainer = (LinearLayout) findViewById(R.id.layoutDots);
         btnSkip = (Button) findViewById(R.id.btn_skip);

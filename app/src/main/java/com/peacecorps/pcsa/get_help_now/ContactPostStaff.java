@@ -49,7 +49,7 @@ public class ContactPostStaff extends Fragment implements AdapterView.OnItemClic
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_reporting_contact_post_staff,container,false);
-
+        getActivity().getWindow().setBackgroundDrawable(null);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
         locationDetails.put(getResources().getString(R.string.loc1_name), new LocationDetails(getResources().getString(R.string.loc1_name), getResources().getString(R.string.loc1_pcmo), getResources().getString(R.string.loc1_ssm), getResources().getString(R.string.loc1_sarl)));
