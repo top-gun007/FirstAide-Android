@@ -20,19 +20,17 @@
         android:textSize="@dimen/sub_title_font"
         android:text="@string/further_resources"/>
 
-    <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-        ext:documentView_textAlignment="justified"
+    <TextView
         android:id="@+id/resources_content"
-        ext:documentView_antialias="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/fragment_main_marginTop_30"
         android:layout_gravity="center"
         android:background="@drawable/bg_textview_rounded_rectangle"
-        ext:documentView_textColor="@color/photo_border"
-        ext:documentView_insetPadding="@dimen/textview_padding"
-        ext:documentView_textSize="@dimen/textsize_links"
+        android:textColor="@color/photo_border"
+        android:padding="@dimen/textview_padding"
+        android:textSize="@dimen/textsize_links"
         android:autoLink="web"
-        ext:documentView_text="@string/resources_all" />
+        android:text="@string/resources_all" />
 
 </LinearLayout>

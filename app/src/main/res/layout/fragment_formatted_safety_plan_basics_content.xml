@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/myView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/safety_plan_basics_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:autoLink="web|email"
+        android:background="@drawable/bg_textview_rounded_rectangle"
+        android:fadeScrollbars="false"
+        android:padding="@dimen/textview_padding"
+        android:scrollbars="vertical"
+        android:textColor="@color/primary_text_default_material_dark"
+        android:textColorLink="@color/text_color_link"
+        android:textSize="@dimen/abc_text_size_medium_material" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dialog_height"
+        android:id="@+id/safety_plan_basics_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_textview_rounded_rectangle" />
+
+</LinearLayout>

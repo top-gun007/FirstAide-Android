@@ -1,18 +1,24 @@
 package com.peacecorps.pcsa.sexual_assault_awareness;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bluejamesbond.text.DocumentView;
 import com.bluejamesbond.text.hyphen.DefaultHyphenator;
+import com.bluejamesbond.text.style.JustifiedSpan;
+import com.bluejamesbond.text.style.TextAlignment;
+import com.bluejamesbond.text.util.ArticleBuilder;
 import com.peacecorps.pcsa.R;
 import com.peacecorps.pcsa.SingleTextViewFragment;
 
@@ -33,17 +39,26 @@ public class HarassmentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_was, container, false);
-        wasContent = (DocumentView) rootView.findViewById(R.id.wasContent);
+        //wasContent = (DocumentView) rootView.findViewById(R.id.wasContent);
         subtitle = (TextView) rootView.findViewById(R.id.subtitle);
         subtitle.setText(getString(R.string.harassment_subtitle));
         knowButton = (Button) rootView.findViewById(R.id.knowButton);
         knowButton.setText(getString(R.string.harassment_subtitle));
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.harassment);
-        wasContent.setText(Html.fromHtml(getString(R.string.harassment_content)));
+//        wasContent.setText(Html.fromHtml(getString(R.string.harassment_content)));
+//        wasContent.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
+//                getInstance(DefaultHyphenator.HyphenPattern.PT));
+//        wasContent.getDocumentLayoutParams().setHyphenated(true);
+        //wasContent.setGravity(Gravity.CENTER);
+        ArticleBuilder articleBuilder = new ArticleBuilder();
+        articleBuilder.append(getString(R.string.harassment_content), true, new RelativeSizeSpan(1f), new JustifiedSpan());
+        wasContent = addDocumentView(Html.toHtml(articleBuilder), DocumentView.PLAIN_TEXT);
+        wasContent.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         wasContent.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
         wasContent.getDocumentLayoutParams().setHyphenated(true);
-        //wasContent.setGravity(Gravity.CENTER);
+        LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.wasContent);
+        linearLayout.addView(wasContent);
         knowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,5 +68,27 @@ public class HarassmentFragment extends Fragment {
             }
         });
         return rootView;
+    }
+
+    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
+        final DocumentView documentView = new DocumentView(getActivity(), type);
+        documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.primary_text_default_material_dark));
+        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
+        documentView.getDocumentLayoutParams().setTextSize(17f);
+        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
+        documentView.getDocumentLayoutParams().setInsetPaddingLeft(10);
+        documentView.getDocumentLayoutParams().setInsetPaddingRight(10);
+        documentView.getDocumentLayoutParams().setAntialias(true);
+        documentView.getDocumentLayoutParams().setInsetPaddingTop(10);
+        documentView.getDocumentLayoutParams().setInsetPaddingBottom(10);
+        documentView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
+                getInstance(DefaultHyphenator.HyphenPattern.PT));
+        documentView.getDocumentLayoutParams().setHyphenated(true);
+        documentView.setText(Html.fromHtml(article.toString()));
+        return documentView;
+    }
+
+    public DocumentView addDocumentView(CharSequence article, int type) {
+        return addDocumentView(article, type, false);
     }
 }

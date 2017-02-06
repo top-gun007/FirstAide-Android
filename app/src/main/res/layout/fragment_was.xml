@@ -43,33 +43,24 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/contacting_post_staff_marginTop_15"
+                        android:background="@drawable/bg_textview_rounded_rectangle"
+                        android:fadeScrollbars="false"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical"
+                        android:id="@+id/wasContent"
+                        android:orientation="vertical" />
 
-                        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-            ext:documentView_textAlignment="justified"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            ext:documentView_textColor="@color/primary_text_default_material_dark"
-            android:id="@+id/wasContent"
-            android:background="@drawable/bg_textview_rounded_rectangle"
-            ext:documentView_insetPadding="@dimen/reporting_types_padding"
-            android:scrollbars="vertical"
-            ext:documentView_textSize="18sp"
-            android:layout_marginTop="@dimen/contacting_post_staff_marginTop_15"
-            android:fadeScrollbars="false"
-            android:scrollbarStyle="insideInset"
-            ext:documentView_antialias="true" />
-
-                    </LinearLayout>
                 </ScrollView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_gravity="bottom"
                 android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:layout_gravity="bottom">
+                android:layout_weight="1">
 
                 <include
                     android:id="@+id/knowButton"

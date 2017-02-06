@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.bluejamesbond.text.DocumentView;
 import com.bluejamesbond.text.hyphen.DefaultHyphenator;
@@ -20,7 +21,7 @@ import com.peacecorps.pcsa.R;
 public class FurtherResourcesFragment extends Fragment {
 
     public static final String TAG = FurtherResourcesFragment.class.getSimpleName();
-    DocumentView resources;
+    TextView resources;
 
     /**
      * Create the view for this fragment, using the arguments given to it.
@@ -38,10 +39,7 @@ public class FurtherResourcesFragment extends Fragment {
 
         //Sets the app title to Policies and Glossary
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.policies_glossary);
-        resources = (DocumentView) rootView.findViewById(R.id.resources_content);
-        resources.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
-                getInstance(DefaultHyphenator.HyphenPattern.PT));
-        resources.getDocumentLayoutParams().setHyphenated(true);
+        resources = (TextView) rootView.findViewById(R.id.resources_content);
         return rootView;
     }
 }

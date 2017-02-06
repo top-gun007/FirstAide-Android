@@ -1,20 +1,29 @@
 package com.peacecorps.pcsa.get_help_now;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bluejamesbond.text.DocumentView;
 import com.bluejamesbond.text.hyphen.DefaultHyphenator;
+import com.bluejamesbond.text.style.JustifiedSpan;
+import com.bluejamesbond.text.style.TextAlignment;
+import com.bluejamesbond.text.util.ArticleBuilder;
 import com.peacecorps.pcsa.R;
 
 /**
@@ -28,7 +37,11 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
 
     public static final String CONTACT_NUMBER = "contactNumber";
     public static final String CONTACT_NAME = "contactName";
-    public static final String CONTACT_DESC = "contatDesc";
+    public static final String CONTACT_DESC_PART1 = "contatDescPart1";
+    public static final String CONTACT_DESC_PART2 = "contatDescPart2";
+    public static final String CONTACT_DESC_PART3 = "contatDescPart3";
+    public static final String URL1 = "url1";
+    public static final String URL2 = "url2";
     public static final String TAG = OtherStaffContent.class.getSimpleName();
     static String contactNumber;
 
@@ -36,20 +49,78 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_reporting_other_staff_content, container, false);
+        final Bundle details = getArguments();
 
         TextView contactName = (TextView) rootView.findViewById(R.id.reporting_contact_other_content);
-        DocumentView contactDescription = (DocumentView) rootView.findViewById(R.id.justifiedTextView);
-        Button contactNow = (Button) rootView.findViewById(R.id.contact_now);
 
-        final Bundle details = getArguments();
-        contactNumber = details.getString(CONTACT_NUMBER);
-
-        contactName.setText(details.getString(CONTACT_NAME));
-        contactDescription.setText(details.getString(CONTACT_DESC));
-        contactNow.setText("Contact Now");
+        ArticleBuilder articleBuilder = new ArticleBuilder();
+        articleBuilder.append(details.getString(CONTACT_DESC_PART1), true, new RelativeSizeSpan(1f), new JustifiedSpan());
+        DocumentView contactDescription = addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT);
+        contactDescription.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         contactDescription.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
         contactDescription.getDocumentLayoutParams().setHyphenated(true);
+        LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.reporting_contact_description);
+        linearLayout.addView(contactDescription);
+
+        ArticleBuilder articleBuilder1 = new ArticleBuilder();
+        articleBuilder1.append(details.getString(CONTACT_DESC_PART2), true, new RelativeSizeSpan(1f), new JustifiedSpan());
+        DocumentView contactDescription1 = addDocumentView(Html.toHtml(articleBuilder1), DocumentView.FORMATTED_TEXT);
+        contactDescription1.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
+        contactDescription1.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
+                getInstance(DefaultHyphenator.HyphenPattern.PT));
+        contactDescription1.getDocumentLayoutParams().setHyphenated(true);
+        contactDescription1.getViewportView().isClickable();
+        linearLayout.addView(contactDescription1);
+        contactDescription1.getViewportView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (details.getString(CONTACT_DESC_PART2).substring(0, 1).equals("e")) {
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("text/html");
+                    intent.putExtra(Intent.EXTRA_EMAIL, details.getString(URL1));
+                    startActivity(Intent.createChooser(intent, "Send Email"));
+                } else {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("http://" + details.getString(URL1)));
+                    startActivity(i);
+                }
+            }
+        });
+
+        //if(!details.getString(CONTACT_DESC_PART3).isEmpty()){
+        ArticleBuilder articleBuilder2 = new ArticleBuilder();
+        articleBuilder2.append(details.getString(CONTACT_DESC_PART3), true, new RelativeSizeSpan(1f), new JustifiedSpan());
+        DocumentView contactDescription2 = addDocumentView(Html.toHtml(articleBuilder2), DocumentView.FORMATTED_TEXT);
+        contactDescription2.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
+        contactDescription2.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
+                getInstance(DefaultHyphenator.HyphenPattern.PT));
+        contactDescription2.getDocumentLayoutParams().setHyphenated(true);
+        linearLayout.addView(contactDescription2);
+        contactDescription2.getViewportView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (details.getString(CONTACT_DESC_PART3).substring(0, 1).equals("e")) {
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("text/html");
+                    intent.putExtra(Intent.EXTRA_EMAIL, details.getString(URL2));
+                    startActivity(Intent.createChooser(intent, "Send Email"));
+                } else {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("http://" + details.getString(URL2)));
+                    startActivity(i);
+                }
+            }
+        });
+        // }
+
+        Button contactNow = (Button) rootView.findViewById(R.id.contact_now);
+
+        contactNumber = details.getString(CONTACT_NUMBER);
+
+        contactName.setText(details.getString(CONTACT_NAME));
+
+        contactNow.setText("Contact Now");
         contactNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,4 +158,28 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
             startActivity(smsIntent);
         }
     }
+
+
+    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
+        final DocumentView documentView = new DocumentView(getActivity(), type);
+        documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.primary_text_default_material_dark));
+        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
+        documentView.getDocumentLayoutParams().setTextSize(16f);
+        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
+        documentView.getDocumentLayoutParams().setInsetPaddingLeft(10);
+        documentView.getDocumentLayoutParams().setInsetPaddingRight(10);
+        documentView.getDocumentLayoutParams().setAntialias(true);
+        documentView.getDocumentLayoutParams().setInsetPaddingTop(10);
+        documentView.getDocumentLayoutParams().setInsetPaddingBottom(10);
+        documentView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
+                getInstance(DefaultHyphenator.HyphenPattern.PT));
+        documentView.getDocumentLayoutParams().setHyphenated(true);
+        documentView.setText(Html.fromHtml(article.toString()));
+        return documentView;
+    }
+
+    public DocumentView addDocumentView(CharSequence article, int type) {
+        return addDocumentView(article, type, false);
+    }
+
 }

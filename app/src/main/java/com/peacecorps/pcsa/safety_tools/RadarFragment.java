@@ -1,5 +1,6 @@
 package com.peacecorps.pcsa.safety_tools;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,13 +8,17 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.bluejamesbond.text.DocumentView;
-import com.bluejamesbond.text.hyphen.DefaultHyphenator;
+import com.peacecorps.pcsa.MainActivity;
 import com.peacecorps.pcsa.R;
 
 /*
@@ -29,7 +34,7 @@ public class RadarFragment extends Fragment {
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
     private ImageView nextStep, prevStep;
-    private DocumentView stepIndicator;
+    private TextView stepIndicator;
     int[] steps_content = new int[]{R.string.radar_step1,R.string.radar_step2,R.string.radar_step3,R.string.radar_step4,R.string.radar_step5};
 
     @Nullable
@@ -44,11 +49,8 @@ public class RadarFragment extends Fragment {
         nextStep = (ImageView)rootView.findViewById(R.id.next_step);
         prevStep = (ImageView)rootView.findViewById(R.id.prev_step);
         final int[] steps = new int[]{R.string.step_1,R.string.step_2,R.string.step_3,R.string.step_4,R.string.step_5};
-        stepIndicator = (DocumentView) rootView.findViewById(R.id.justifiedTextView);
+        stepIndicator = (TextView) rootView.findViewById(R.id.steps_text);
         stepIndicator.setText(Html.fromHtml(getString(steps[0])));
-        stepIndicator.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
-                getInstance(DefaultHyphenator.HyphenPattern.PT));
-        stepIndicator.getDocumentLayoutParams().setHyphenated(true);
         prevStep.setVisibility(View.INVISIBLE);
 
         prevStep.setOnClickListener(new View.OnClickListener() {

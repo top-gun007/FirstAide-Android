@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.peacecorps.pcsa.FormattedSingleTextViewFragment;
 import com.peacecorps.pcsa.MainActivity;
 import com.peacecorps.pcsa.R;
 import com.peacecorps.pcsa.SingleTextViewFragment;
@@ -53,7 +54,11 @@ public class SupportServicesFragment extends Fragment {
         benefitsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SingleTextViewFragment.showSingleTextLayout(getActivity(),getString(R.string.benefits),getString(R.string.benefits_subtitle),getString(R.string.benefits_info));
+                SingleTextViewFragment
+                        .showSingleTextLayout(getActivity(),
+                                getString(R.string.benefits),
+                                getString(R.string.benefits_subtitle),
+                                getString(R.string.benefits_info));
             }
         });
         
@@ -69,7 +74,11 @@ public class SupportServicesFragment extends Fragment {
         commitmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SingleTextViewFragment.showSingleTextLayout(getActivity(),getString(R.string.commitment),getString(R.string.commitment_subtitle),getString(R.string.commitment_info));
+                FormattedSingleTextViewFragment
+                        .showSingleTextLayout(getActivity(),
+                                getString(R.string.commitment),
+                                getString(R.string.commitment_subtitle),
+                                getString(R.string.commitment_info));
             }
         });
 
