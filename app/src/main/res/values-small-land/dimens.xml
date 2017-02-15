@@ -16,5 +16,6 @@
     <dimen name="sub_title_font_trustee">16sp</dimen>
     <dimen name="circle_of_trust_width_25">13dp</dimen>
     <dimen name="circle_of_trust_title_paddingLeft">-38dp</dimen>
+    <dimen name="navgn_bar_marginRight">160dp</dimen>
 
 </resources>

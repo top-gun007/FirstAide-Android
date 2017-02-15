@@ -137,5 +137,6 @@
     <dimen name="circle_imageview_height">250dp</dimen>
     <dimen name="safety_plan_marginTop">20dp</dimen>
     <dimen name="sub_title_font_trustee">28sp</dimen>
+    <dimen name="navgn_bar_marginRight">0dp</dimen>
 
 </resources>
