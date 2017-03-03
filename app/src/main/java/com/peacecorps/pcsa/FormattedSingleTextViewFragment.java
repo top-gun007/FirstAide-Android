@@ -59,6 +59,7 @@ public class FormattedSingleTextViewFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_formatted_single_textview, container, false);
         subTitle = (TextView) rootView.findViewById(R.id.layout_subtitle);
         //content = (DocumentView) rootView.findViewById(R.id.layout_content);
+        JustificationUtil util = new JustificationUtil(getActivity().getApplicationContext());
         toolbarTitle = getArguments().getString(TOOLBAR_KEY);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(toolbarTitle);
         subtitle = getArguments().getString(SUBTITLE_KEY);
@@ -67,7 +68,8 @@ public class FormattedSingleTextViewFragment extends Fragment {
 
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(contentString, true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        content = addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT);
+        content = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT, false,
+                getActivity());
         content.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         content.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -75,27 +77,5 @@ public class FormattedSingleTextViewFragment extends Fragment {
         LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.layout_content);
         linearLayout.addView(content);
         return rootView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
-        final DocumentView documentView = new DocumentView(getActivity(), type);
-        documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.primary_text_default_material_dark));
-        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
-        documentView.getDocumentLayoutParams().setTextSize(17f);
-        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
-        documentView.getDocumentLayoutParams().setInsetPaddingLeft(10f);
-        documentView.getDocumentLayoutParams().setInsetPaddingRight(10f);
-        documentView.getDocumentLayoutParams().setAntialias(true);
-        documentView.getDocumentLayoutParams().setInsetPaddingTop(10f);
-        documentView.getDocumentLayoutParams().setInsetPaddingBottom(10f);
-        documentView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
-                getInstance(DefaultHyphenator.HyphenPattern.PT));
-        documentView.getDocumentLayoutParams().setHyphenated(true);
-        documentView.setText(Html.fromHtml(article.toString()));
-        return documentView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type) {
-        return addDocumentView(article, type, false);
     }
 }

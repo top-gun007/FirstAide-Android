@@ -19,6 +19,7 @@ import com.bluejamesbond.text.hyphen.DefaultHyphenator;
 import com.bluejamesbond.text.style.JustifiedSpan;
 import com.bluejamesbond.text.style.TextAlignment;
 import com.bluejamesbond.text.util.ArticleBuilder;
+import com.peacecorps.pcsa.JustificationUtil;
 import com.peacecorps.pcsa.R;
 import com.peacecorps.pcsa.SingleTextViewFragment;
 
@@ -39,6 +40,7 @@ public class HarassmentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_was, container, false);
+        JustificationUtil util = new JustificationUtil(getActivity().getApplicationContext());
         //wasContent = (DocumentView) rootView.findViewById(R.id.wasContent);
         subtitle = (TextView) rootView.findViewById(R.id.subtitle);
         subtitle.setText(getString(R.string.harassment_subtitle));
@@ -52,7 +54,8 @@ public class HarassmentFragment extends Fragment {
         //wasContent.setGravity(Gravity.CENTER);
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(getString(R.string.harassment_content), true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        wasContent = addDocumentView(Html.toHtml(articleBuilder), DocumentView.PLAIN_TEXT);
+        wasContent = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.PLAIN_TEXT, false,
+                getActivity());
         wasContent.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         wasContent.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -68,27 +71,5 @@ public class HarassmentFragment extends Fragment {
             }
         });
         return rootView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
-        final DocumentView documentView = new DocumentView(getActivity(), type);
-        documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.primary_text_default_material_dark));
-        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
-        documentView.getDocumentLayoutParams().setTextSize(17f);
-        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
-        documentView.getDocumentLayoutParams().setInsetPaddingLeft(10);
-        documentView.getDocumentLayoutParams().setInsetPaddingRight(10);
-        documentView.getDocumentLayoutParams().setAntialias(true);
-        documentView.getDocumentLayoutParams().setInsetPaddingTop(10);
-        documentView.getDocumentLayoutParams().setInsetPaddingBottom(10);
-        documentView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
-                getInstance(DefaultHyphenator.HyphenPattern.PT));
-        documentView.getDocumentLayoutParams().setHyphenated(true);
-        documentView.setText(Html.fromHtml(article.toString()));
-        return documentView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type) {
-        return addDocumentView(article, type, false);
     }
 }

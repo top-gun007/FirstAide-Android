@@ -23,6 +23,7 @@ import com.bluejamesbond.text.hyphen.DefaultHyphenator;
 import com.bluejamesbond.text.style.JustifiedSpan;
 import com.bluejamesbond.text.style.TextAlignment;
 import com.bluejamesbond.text.util.ArticleBuilder;
+import com.peacecorps.pcsa.JustificationUtil;
 import com.peacecorps.pcsa.R;
 
 /**
@@ -57,6 +58,7 @@ public class FormattedSafetyPlanBasicsContentFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_formatted_safety_plan_basics_content, container, false);
+        JustificationUtil util = new JustificationUtil(getActivity().getApplicationContext());
         parentView = (LinearLayout) rootView.findViewById(R.id.myView);
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         titleToDisplay = (TextView) rootView.findViewById(R.id.safety_plan_basics_title);
@@ -64,7 +66,7 @@ public class FormattedSafetyPlanBasicsContentFragment extends DialogFragment {
         String content = getArguments().getString(CONTENT_KEY);
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(content, true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        contenttoDisplay = addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT);
+        contenttoDisplay = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT, false, getActivity());
         contenttoDisplay.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         contenttoDisplay.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -85,27 +87,5 @@ public class FormattedSafetyPlanBasicsContentFragment extends DialogFragment {
                     (new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         }
         return rootView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
-        final DocumentView documentView = new DocumentView(getActivity(), type);
-        documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.primary_text_default_material_dark));
-        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
-        documentView.getDocumentLayoutParams().setTextSize(16f);
-        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
-        documentView.getDocumentLayoutParams().setInsetPaddingLeft(10);
-        documentView.getDocumentLayoutParams().setInsetPaddingRight(10);
-        documentView.getDocumentLayoutParams().setAntialias(true);
-        documentView.getDocumentLayoutParams().setInsetPaddingTop(10);
-        documentView.getDocumentLayoutParams().setInsetPaddingBottom(10);
-        documentView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
-                getInstance(DefaultHyphenator.HyphenPattern.PT));
-        documentView.getDocumentLayoutParams().setHyphenated(true);
-        documentView.setText(Html.fromHtml(article.toString()));
-        return documentView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type) {
-        return addDocumentView(article, type, false);
     }
 }

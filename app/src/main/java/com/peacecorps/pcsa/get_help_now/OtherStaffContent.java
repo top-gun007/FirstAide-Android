@@ -24,6 +24,7 @@ import com.bluejamesbond.text.hyphen.DefaultHyphenator;
 import com.bluejamesbond.text.style.JustifiedSpan;
 import com.bluejamesbond.text.style.TextAlignment;
 import com.bluejamesbond.text.util.ArticleBuilder;
+import com.peacecorps.pcsa.JustificationUtil;
 import com.peacecorps.pcsa.R;
 
 /**
@@ -50,12 +51,13 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_reporting_other_staff_content, container, false);
         final Bundle details = getArguments();
-
+        JustificationUtil util = new JustificationUtil(getActivity().getApplicationContext());
         TextView contactName = (TextView) rootView.findViewById(R.id.reporting_contact_other_content);
 
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(details.getString(CONTACT_DESC_PART1), true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView contactDescription = addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT);
+        DocumentView contactDescription = util.addDocumentView(Html.toHtml(articleBuilder),
+                DocumentView.FORMATTED_TEXT, true, getActivity());
         contactDescription.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         contactDescription.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -65,7 +67,8 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
 
         ArticleBuilder articleBuilder1 = new ArticleBuilder();
         articleBuilder1.append(details.getString(CONTACT_DESC_PART2), true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView contactDescription1 = addDocumentView(Html.toHtml(articleBuilder1), DocumentView.FORMATTED_TEXT);
+        DocumentView contactDescription1 = util.addDocumentView(Html.toHtml(articleBuilder1),
+                DocumentView.FORMATTED_TEXT, true, getActivity());
         contactDescription1.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         contactDescription1.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -91,7 +94,8 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
         //if(!details.getString(CONTACT_DESC_PART3).isEmpty()){
         ArticleBuilder articleBuilder2 = new ArticleBuilder();
         articleBuilder2.append(details.getString(CONTACT_DESC_PART3), true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView contactDescription2 = addDocumentView(Html.toHtml(articleBuilder2), DocumentView.FORMATTED_TEXT);
+        DocumentView contactDescription2 = util.addDocumentView(Html.toHtml(articleBuilder2),
+                DocumentView.FORMATTED_TEXT, true, getActivity());
         contactDescription2.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         contactDescription2.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -158,28 +162,4 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
             startActivity(smsIntent);
         }
     }
-
-
-    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
-        final DocumentView documentView = new DocumentView(getActivity(), type);
-        documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.primary_text_default_material_dark));
-        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
-        documentView.getDocumentLayoutParams().setTextSize(16f);
-        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
-        documentView.getDocumentLayoutParams().setInsetPaddingLeft(10);
-        documentView.getDocumentLayoutParams().setInsetPaddingRight(10);
-        documentView.getDocumentLayoutParams().setAntialias(true);
-        documentView.getDocumentLayoutParams().setInsetPaddingTop(10);
-        documentView.getDocumentLayoutParams().setInsetPaddingBottom(10);
-        documentView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
-                getInstance(DefaultHyphenator.HyphenPattern.PT));
-        documentView.getDocumentLayoutParams().setHyphenated(true);
-        documentView.setText(Html.fromHtml(article.toString()));
-        return documentView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type) {
-        return addDocumentView(article, type, false);
-    }
-
 }

@@ -18,6 +18,7 @@ import com.bluejamesbond.text.hyphen.DefaultHyphenator;
 import com.bluejamesbond.text.style.JustifiedSpan;
 import com.bluejamesbond.text.style.TextAlignment;
 import com.bluejamesbond.text.util.ArticleBuilder;
+import com.peacecorps.pcsa.JustificationUtil;
 import com.peacecorps.pcsa.R;
 
 /*
@@ -38,10 +39,12 @@ public class HelpingFragment extends Fragment {
         TextView subtitle = (TextView) rootView.findViewById(R.id.reporting_title_steps);
         subtitle.setText(getString(R.string.helping_subtitle));
 
+        JustificationUtil util = new JustificationUtil(getActivity().getApplicationContext());
         ArticleBuilder articleBuilder1 = new ArticleBuilder();
         articleBuilder1.append(getResources().getString(R.string.helping1),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step1 = addDocumentView(Html.toHtml(articleBuilder1), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step1 = util.addDocumentView(Html.toHtml(articleBuilder1),
+                DocumentView.FORMATTED_TEXT, false, getActivity());
         reporting_step1.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step1.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -52,7 +55,8 @@ public class HelpingFragment extends Fragment {
         ArticleBuilder articleBuilder2 = new ArticleBuilder();
         articleBuilder2.append(getResources().getString(R.string.helping2),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step2 = addDocumentView(Html.toHtml(articleBuilder2), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step2 = util.addDocumentView(Html.toHtml(articleBuilder2), DocumentView.FORMATTED_TEXT, false,
+                getActivity());
         reporting_step2.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step2.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -63,7 +67,8 @@ public class HelpingFragment extends Fragment {
         ArticleBuilder articleBuilder3 = new ArticleBuilder();
         articleBuilder3.append(getResources().getString(R.string.helping3),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step3 = addDocumentView(Html.toHtml(articleBuilder3), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step3 = util.addDocumentView(Html.toHtml(articleBuilder3), DocumentView.FORMATTED_TEXT, false,
+                getActivity());
         reporting_step3.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step3.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -74,7 +79,8 @@ public class HelpingFragment extends Fragment {
         ArticleBuilder articleBuilder4 = new ArticleBuilder();
         articleBuilder4.append(getResources().getString(R.string.helping4),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step4 = addDocumentView(Html.toHtml(articleBuilder4), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step4 = util.addDocumentView(Html.toHtml(articleBuilder4), DocumentView.FORMATTED_TEXT, false,
+                getActivity());
         reporting_step4.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step4.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -85,7 +91,8 @@ public class HelpingFragment extends Fragment {
         ArticleBuilder articleBuilder5 = new ArticleBuilder();
         articleBuilder5.append(getResources().getString(R.string.helping5),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step5 = addDocumentView(Html.toHtml(articleBuilder5), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step5 = util.addDocumentView(Html.toHtml(articleBuilder5), DocumentView.FORMATTED_TEXT, false,
+                getActivity());
         reporting_step5.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step5.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -96,27 +103,5 @@ public class HelpingFragment extends Fragment {
         LinearLayout linearLayout6 = (LinearLayout) rootView.findViewById(R.id.reporting_step6);
         linearLayout6.setVisibility(View.GONE);
         return rootView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
-        final DocumentView documentView = new DocumentView(getActivity(), type);
-        documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.primary_text_default_material_dark));
-        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
-        documentView.getDocumentLayoutParams().setTextSize(18f);
-        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
-        documentView.getDocumentLayoutParams().setInsetPaddingLeft(10f);
-        documentView.getDocumentLayoutParams().setInsetPaddingRight(10f);
-        documentView.getDocumentLayoutParams().setAntialias(true);
-        documentView.getDocumentLayoutParams().setInsetPaddingTop(10f);
-        documentView.getDocumentLayoutParams().setInsetPaddingBottom(10f);
-        documentView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
-                getInstance(DefaultHyphenator.HyphenPattern.PT));
-        documentView.getDocumentLayoutParams().setHyphenated(true);
-        documentView.setText(Html.fromHtml(article.toString()));
-        return documentView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type) {
-        return addDocumentView(article, type, false);
     }
 }
