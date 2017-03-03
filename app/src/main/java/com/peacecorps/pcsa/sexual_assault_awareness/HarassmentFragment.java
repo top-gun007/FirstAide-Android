@@ -57,7 +57,7 @@ public class HarassmentFragment extends Fragment {
         wasContent.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
         wasContent.getDocumentLayoutParams().setHyphenated(true);
-        LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.wasContent);
+        LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.was_content);
         linearLayout.addView(wasContent);
         knowButton.setOnClickListener(new View.OnClickListener() {
             @Override

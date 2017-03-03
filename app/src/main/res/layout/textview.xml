@@ -17,7 +17,7 @@
         ext:documentView_textColor="@color/primary_text_default_material_dark"
         android:textColorLink="@color/text_color_link"
         ext:documentView_antialias="true"
-        android:id="@+id/justifiedTextView"
+        android:id="@+id/justified_textView"
         ext:documentView_textSize="@dimen/abc_text_size_medium_material"
         ext:documentView_textAlignment="justified" />
 </LinearLayout>

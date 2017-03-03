@@ -57,7 +57,7 @@ public class SafetyPlanBasicsContentFragment extends DialogFragment {
         View rootView = inflater.inflate(R.layout.fragment_safety_plan_basics_content, container, false);
         parentView = (LinearLayout) rootView.findViewById(R.id.myView);
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        contenttoDisplay = (DocumentView) rootView.findViewById(R.id.justifiedTextView);
+        contenttoDisplay = (DocumentView) rootView.findViewById(R.id.justified_textView);
         titleToDisplay = (TextView) rootView.findViewById(R.id.safety_plan_basics_title);
         String title = getArguments().getString(TITLE_KEY);
         String content = getArguments().getString(CONTENT_KEY);

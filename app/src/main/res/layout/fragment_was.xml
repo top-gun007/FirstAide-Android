@@ -49,7 +49,7 @@
                         android:fadeScrollbars="false"
                         android:scrollbarStyle="insideInset"
                         android:scrollbars="vertical"
-                        android:id="@+id/wasContent"
+                        android:id="@+id/was_content"
                         android:orientation="vertical" />
 
                 </ScrollView>
