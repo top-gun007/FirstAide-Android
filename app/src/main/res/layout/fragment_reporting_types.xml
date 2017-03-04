@@ -33,8 +33,7 @@
         android:textColor="@color/primary_text_default_material_dark"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:textSize="@dimen/title_font"
-        android:id="@+id/reporting_title" />
+        android:textSize="@dimen/title_font" />
 
     <HorizontalScrollView
             android:layout_width="match_parent"
