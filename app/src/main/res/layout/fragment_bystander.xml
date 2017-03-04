@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
+      
         <TextView
             android:id="@+id/textView"
             android:layout_width="fill_parent"
@@ -45,6 +45,7 @@
             android:layout_marginBottom="@dimen/bystander_margin_below_text"
             android:text="@string/bystander_tactics_both"
             android:textSize="@dimen/bystander_button_textsize" />
+
 
         <TextView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/bystander_text"

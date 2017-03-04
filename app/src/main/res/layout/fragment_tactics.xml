@@ -52,6 +52,7 @@
                     android:scrollbarStyle="insideInset"
                     ext:documentView_antialias="true"
                     ext:documentView_textColor="@color/primary_text_default_material_dark" />
+              
             </ScrollView>
 
             <ScrollView
