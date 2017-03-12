@@ -27,6 +27,7 @@ public class MainFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView =  inflater.inflate(R.layout.fragment_assault_awareness,container,false);
+        getActivity().getWindow().setBackgroundDrawable(null);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.sexual_assault_awareness);
 
         Button wasButton = (Button) rootView.findViewById(R.id.wasButton);

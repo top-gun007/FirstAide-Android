@@ -34,6 +34,7 @@ public class SupportServicesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView =  inflater.inflate(R.layout.fragment_support_services,container,false);
+        getActivity().getWindow().setBackgroundDrawable(null);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.support_services);
 
         benefitsButton = (Button) rootView.findViewById(R.id.benefitsButton);

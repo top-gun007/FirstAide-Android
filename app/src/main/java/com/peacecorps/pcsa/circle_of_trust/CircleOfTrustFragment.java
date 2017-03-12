@@ -89,6 +89,7 @@ public class CircleOfTrustFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_circle_of_trust, container, false);
+        getActivity().getWindow().setBackgroundDrawable(null);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.circle_title);
 
         sharedPreferences = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);

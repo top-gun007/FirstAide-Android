@@ -42,6 +42,7 @@ public class RadarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView =  inflater.inflate(R.layout.fragment_radar,container,false);
+        getActivity().getWindow().setBackgroundDrawable(null);
         mPager = (ViewPager) rootView.findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlideCustomPagerAdapter(getActivity(),steps_content,NUM_PAGES);
         mPager.setAdapter(mPagerAdapter);
