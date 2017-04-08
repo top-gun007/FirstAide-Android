@@ -15,6 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -26,6 +28,7 @@ import android.widget.Toast;
 import com.peacecorps.pcsa.MainActivity;
 import com.peacecorps.pcsa.R;
 import com.peacecorps.pcsa.StatusBarColorUtil;
+import com.peacecorps.pcsa.UserSettingsActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -161,6 +164,12 @@ public class Trustees extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.settings,menu);
+        return true;
+    }
     /**
      * Start for selecting contacts from standard contract picker
      * @param v
@@ -370,10 +379,11 @@ public class Trustees extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
-                return true;
+            case R.id.menu_settings:
+                Intent intent=new Intent(this, UserSettingsActivity.class);
+                startActivity(intent);
         }
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 }
 

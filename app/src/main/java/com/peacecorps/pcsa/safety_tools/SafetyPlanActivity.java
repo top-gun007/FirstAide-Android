@@ -1,5 +1,6 @@
 package com.peacecorps.pcsa.safety_tools;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.peacecorps.pcsa.R;
+import com.peacecorps.pcsa.UserSettingsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,12 +47,22 @@ public class SafetyPlanActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.settings,menu);
+        return true;
+    }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId())
         {
             case android.R.id.home:
                 this.finish();
                 break;
+            case R.id.menu_settings:
+                Intent intent=new Intent(this, UserSettingsActivity.class);
+                startActivity(intent);
         }
         return true;
     }
