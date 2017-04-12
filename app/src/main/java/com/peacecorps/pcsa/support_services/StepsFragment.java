@@ -17,6 +17,7 @@ import com.bluejamesbond.text.hyphen.DefaultHyphenator;
 import com.bluejamesbond.text.style.JustifiedSpan;
 import com.bluejamesbond.text.style.TextAlignment;
 import com.bluejamesbond.text.util.ArticleBuilder;
+import com.peacecorps.pcsa.JustificationUtil;
 import com.peacecorps.pcsa.R;
 
 /**
@@ -35,10 +36,12 @@ public class StepsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_reporting_steps, container, false);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.after_assault);
 
+        JustificationUtil util = new JustificationUtil(getActivity().getApplicationContext());
         ArticleBuilder articleBuilder1 = new ArticleBuilder();
         articleBuilder1.append(getResources().getString(R.string.reporting_step1),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step1 = addDocumentView(Html.toHtml(articleBuilder1), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step1 = util.addDocumentView(Html.toHtml(articleBuilder1),
+                DocumentView.FORMATTED_TEXT, false, getActivity());
         reporting_step1.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step1.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -49,7 +52,8 @@ public class StepsFragment extends Fragment {
         ArticleBuilder articleBuilder2 = new ArticleBuilder();
         articleBuilder2.append(getResources().getString(R.string.reporting_step2),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step2 = addDocumentView(Html.toHtml(articleBuilder2), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step2 = util.addDocumentView(Html.toHtml(articleBuilder2),
+                DocumentView.FORMATTED_TEXT, false, getActivity());
         reporting_step2.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step2.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -60,7 +64,8 @@ public class StepsFragment extends Fragment {
         ArticleBuilder articleBuilder3 = new ArticleBuilder();
         articleBuilder3.append(getResources().getString(R.string.reporting_step3),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step3 = addDocumentView(Html.toHtml(articleBuilder3), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step3 = util.addDocumentView(Html.toHtml(articleBuilder3),
+                DocumentView.FORMATTED_TEXT, false, getActivity());
         reporting_step3.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step3.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -71,7 +76,8 @@ public class StepsFragment extends Fragment {
         ArticleBuilder articleBuilder4 = new ArticleBuilder();
         articleBuilder4.append(getResources().getString(R.string.reporting_step4),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step4 = addDocumentView(Html.toHtml(articleBuilder4), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step4 = util.addDocumentView(Html.toHtml(articleBuilder4),
+                DocumentView.FORMATTED_TEXT, false, getActivity());
         reporting_step4.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step4.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -82,7 +88,8 @@ public class StepsFragment extends Fragment {
         ArticleBuilder articleBuilder5 = new ArticleBuilder();
         articleBuilder5.append(getResources().getString(R.string.reporting_step5),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step5 = addDocumentView(Html.toHtml(articleBuilder5), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step5 = util.addDocumentView(Html.toHtml(articleBuilder5),
+                DocumentView.FORMATTED_TEXT, false, getActivity());
         reporting_step5.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step5.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -93,7 +100,8 @@ public class StepsFragment extends Fragment {
         ArticleBuilder articleBuilder6 = new ArticleBuilder();
         articleBuilder6.append(getResources().getString(R.string.reporting_step6),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView reporting_step6 = addDocumentView(Html.toHtml(articleBuilder6), DocumentView.FORMATTED_TEXT);
+        DocumentView reporting_step6 = util.addDocumentView(Html.toHtml(articleBuilder6),
+                DocumentView.FORMATTED_TEXT, false, getActivity());
         reporting_step6.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step6.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -102,27 +110,5 @@ public class StepsFragment extends Fragment {
         linearLayout6.addView(reporting_step6);
 
         return rootView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
-        final DocumentView documentView = new DocumentView(getActivity(), type);
-        documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.primary_text_default_material_dark));
-        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
-        documentView.getDocumentLayoutParams().setTextSize(17f);
-        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
-        documentView.getDocumentLayoutParams().setInsetPaddingLeft(10f);
-        documentView.getDocumentLayoutParams().setInsetPaddingRight(10f);
-        documentView.getDocumentLayoutParams().setAntialias(true);
-        documentView.getDocumentLayoutParams().setInsetPaddingTop(10f);
-        documentView.getDocumentLayoutParams().setInsetPaddingBottom(10f);
-        documentView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
-                getInstance(DefaultHyphenator.HyphenPattern.PT));
-        documentView.getDocumentLayoutParams().setHyphenated(true);
-        documentView.setText(Html.fromHtml(article.toString()));
-        return documentView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type) {
-        return addDocumentView(article, type, false);
     }
 }
