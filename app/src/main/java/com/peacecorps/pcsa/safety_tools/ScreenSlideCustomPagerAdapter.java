@@ -15,6 +15,7 @@ import com.bluejamesbond.text.hyphen.DefaultHyphenator;
 import com.bluejamesbond.text.style.JustifiedSpan;
 import com.bluejamesbond.text.style.TextAlignment;
 import com.bluejamesbond.text.util.ArticleBuilder;
+import com.peacecorps.pcsa.JustificationUtil;
 import com.peacecorps.pcsa.R;
 
 /**
@@ -52,10 +53,12 @@ public class ScreenSlideCustomPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         View itemView = mLayoutInflater.inflate(R.layout.fragment_viewpager, container, false);
 
+        JustificationUtil util = new JustificationUtil(mContext.getApplicationContext());
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(mContext.getString(steps[position]),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        DocumentView textView = addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT);
+        DocumentView textView = util.addDocumentView(Html.toHtml(articleBuilder),
+                DocumentView.FORMATTED_TEXT, false, mContext,null);
         textView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         textView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -72,25 +75,4 @@ public class ScreenSlideCustomPagerAdapter extends PagerAdapter {
         container.removeView((View) object);
     }
 
-    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
-        final DocumentView documentView = new DocumentView(mContext, type);
-        documentView.getDocumentLayoutParams().setTextColor(mContext.getResources().getColor(R.color.primary_text_default_material_dark));
-        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
-        documentView.getDocumentLayoutParams().setTextSize(17f);
-        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
-        documentView.getDocumentLayoutParams().setInsetPaddingLeft(10);
-        documentView.getDocumentLayoutParams().setInsetPaddingRight(10);
-        documentView.getDocumentLayoutParams().setAntialias(true);
-        documentView.getDocumentLayoutParams().setInsetPaddingTop(10);
-        documentView.getDocumentLayoutParams().setInsetPaddingBottom(10);
-        documentView.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
-                getInstance(DefaultHyphenator.HyphenPattern.PT));
-        documentView.getDocumentLayoutParams().setHyphenated(true);
-        documentView.setText(Html.fromHtml(article.toString()));
-        return documentView;
-    }
-
-    public DocumentView addDocumentView(CharSequence article, int type) {
-        return addDocumentView(article, type, false);
-    }
 }

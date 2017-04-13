@@ -67,7 +67,7 @@ public class FormattedSingleTextViewFragment extends Fragment {
 
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(contentString, true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        content = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT, false,
+        content = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT, false,null,
                 getActivity());
         content.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         content.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.

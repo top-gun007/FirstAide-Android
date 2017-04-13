@@ -55,7 +55,7 @@ public class HarassmentFragment extends Fragment {
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(getString(R.string.harassment_content), true, new RelativeSizeSpan(1f), new JustifiedSpan());
         wasContent = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.PLAIN_TEXT, false,
-                getActivity());
+                null,getActivity());
         wasContent.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         wasContent.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));

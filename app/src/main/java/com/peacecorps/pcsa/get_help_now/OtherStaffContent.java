@@ -57,7 +57,7 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(details.getString(CONTACT_DESC_PART1), true, new RelativeSizeSpan(1f), new JustifiedSpan());
         DocumentView contactDescription = util.addDocumentView(Html.toHtml(articleBuilder),
-                DocumentView.FORMATTED_TEXT, true, getActivity());
+                DocumentView.FORMATTED_TEXT, true, null,getActivity());
         contactDescription.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         contactDescription.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -68,7 +68,7 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
         ArticleBuilder articleBuilder1 = new ArticleBuilder();
         articleBuilder1.append(details.getString(CONTACT_DESC_PART2), true, new RelativeSizeSpan(1f), new JustifiedSpan());
         DocumentView contactDescription1 = util.addDocumentView(Html.toHtml(articleBuilder1),
-                DocumentView.FORMATTED_TEXT, true, getActivity());
+                DocumentView.FORMATTED_TEXT, true,null, getActivity());
         contactDescription1.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         contactDescription1.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -95,7 +95,7 @@ public class OtherStaffContent extends Fragment implements AdapterView.OnItemCli
         ArticleBuilder articleBuilder2 = new ArticleBuilder();
         articleBuilder2.append(details.getString(CONTACT_DESC_PART3), true, new RelativeSizeSpan(1f), new JustifiedSpan());
         DocumentView contactDescription2 = util.addDocumentView(Html.toHtml(articleBuilder2),
-                DocumentView.FORMATTED_TEXT, true, getActivity());
+                DocumentView.FORMATTED_TEXT, true,null, getActivity());
         contactDescription2.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         contactDescription2.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));

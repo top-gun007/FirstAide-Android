@@ -65,7 +65,7 @@ public class FormattedSafetyPlanBasicsContentFragment extends DialogFragment {
         String content = getArguments().getString(CONTENT_KEY);
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(content, true, new RelativeSizeSpan(1f), new JustifiedSpan());
-        contenttoDisplay = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT, false, getActivity());
+        contenttoDisplay = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT, false, null,getActivity());
         contenttoDisplay.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         contenttoDisplay.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));

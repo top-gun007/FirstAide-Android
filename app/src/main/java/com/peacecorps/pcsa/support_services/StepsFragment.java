@@ -41,7 +41,7 @@ public class StepsFragment extends Fragment {
         articleBuilder1.append(getResources().getString(R.string.reporting_step1),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
         DocumentView reporting_step1 = util.addDocumentView(Html.toHtml(articleBuilder1),
-                DocumentView.FORMATTED_TEXT, false, getActivity());
+                DocumentView.FORMATTED_TEXT, false,null, getActivity());
         reporting_step1.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step1.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -53,7 +53,7 @@ public class StepsFragment extends Fragment {
         articleBuilder2.append(getResources().getString(R.string.reporting_step2),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
         DocumentView reporting_step2 = util.addDocumentView(Html.toHtml(articleBuilder2),
-                DocumentView.FORMATTED_TEXT, false, getActivity());
+                DocumentView.FORMATTED_TEXT, false, null,getActivity());
         reporting_step2.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step2.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -65,7 +65,7 @@ public class StepsFragment extends Fragment {
         articleBuilder3.append(getResources().getString(R.string.reporting_step3),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
         DocumentView reporting_step3 = util.addDocumentView(Html.toHtml(articleBuilder3),
-                DocumentView.FORMATTED_TEXT, false, getActivity());
+                DocumentView.FORMATTED_TEXT, false, null,getActivity());
         reporting_step3.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step3.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -77,7 +77,7 @@ public class StepsFragment extends Fragment {
         articleBuilder4.append(getResources().getString(R.string.reporting_step4),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
         DocumentView reporting_step4 = util.addDocumentView(Html.toHtml(articleBuilder4),
-                DocumentView.FORMATTED_TEXT, false, getActivity());
+                DocumentView.FORMATTED_TEXT, false,null, getActivity());
         reporting_step4.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step4.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -89,7 +89,7 @@ public class StepsFragment extends Fragment {
         articleBuilder5.append(getResources().getString(R.string.reporting_step5),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
         DocumentView reporting_step5 = util.addDocumentView(Html.toHtml(articleBuilder5),
-                DocumentView.FORMATTED_TEXT, false, getActivity());
+                DocumentView.FORMATTED_TEXT, false, null,getActivity());
         reporting_step5.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step5.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));
@@ -101,7 +101,7 @@ public class StepsFragment extends Fragment {
         articleBuilder6.append(getResources().getString(R.string.reporting_step6),
                 true, new RelativeSizeSpan(1f), new JustifiedSpan());
         DocumentView reporting_step6 = util.addDocumentView(Html.toHtml(articleBuilder6),
-                DocumentView.FORMATTED_TEXT, false, getActivity());
+                DocumentView.FORMATTED_TEXT, false, null,getActivity());
         reporting_step6.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         reporting_step6.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
                 getInstance(DefaultHyphenator.HyphenPattern.PT));

@@ -50,7 +50,7 @@ public class WasFragment extends Fragment {
         ArticleBuilder articleBuilder = new ArticleBuilder();
         articleBuilder.append(getString(R.string.was_content), true, new RelativeSizeSpan(1f), new JustifiedSpan());
         JustificationUtil util = new JustificationUtil(getActivity().getApplicationContext());
-        wasContent = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT, false,
+        wasContent = util.addDocumentView(Html.toHtml(articleBuilder), DocumentView.FORMATTED_TEXT, false,null,
                 getActivity());
         wasContent.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         wasContent.getDocumentLayoutParams().setHyphenator(DefaultHyphenator.
